@@ -1,7 +1,10 @@
 import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
-import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs'
+import { ToastContainer } from 'react-toastify'
+
+import './globals.css'
+import 'react-toastify/dist/ReactToastify.css'
 import Header from '@/components/Header'
 
 const roboto = Roboto({ weight: '400', subsets: ['latin'] })
@@ -22,6 +25,7 @@ export default function RootLayout({
         <body className={roboto.className}>
           <Header />
           <main className='container'>{children}</main>
+          <ToastContainer />
         </body>
       </html>
     </ClerkProvider>

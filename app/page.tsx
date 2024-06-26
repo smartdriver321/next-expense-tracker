@@ -1,6 +1,7 @@
 import { currentUser } from '@clerk/nextjs/server'
 
 import Guest from '@/components/Guest'
+import AddTransaction from '@/components/AddTransaction'
 
 export default async function HomePage() {
   const user = await currentUser()
@@ -12,6 +13,7 @@ export default async function HomePage() {
   return (
     <main>
       <h1>Welcome, {user.firstName}</h1>
+      <AddTransaction />
     </main>
   )
 }
